@@ -1,0 +1,129 @@
+{
+  "name": "azuredatastudio-sqlite",
+  "displayName": "Sqlite",
+  "description": "%description%",
+  "publisher": "Microsoft",
+  "version": "1.0.20",
+  "main": "./out/index",
+  "extensionKind": [
+    "workspace"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/Microsoft/azuredatastudio-sqlite.git"
+  },
+  "engines": {
+    "vscode": "*",
+    "azdata": "*"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "clean": "./node_modules/.bin/gulp clean",
+    "compile": "./node_modules/.bin/gulp compile",
+    "package": "./node_modules/.bin/gulp package"
+  },
+  "activationEvents": [
+    "onConnect:sqlite"
+  ],
+  "author": "Microsoft",
+  "license": "ISC",
+  "devDependencies": {
+    "@types/azdata": "^1.15.1",
+    "@types/node": "12.11.7",
+    "azdata": "^1.0.0",
+    "copy-webpack-plugin": "^5.1.1",
+    "gulp": "^4.0.2",
+    "gulp-rename": "^2.0.0",
+    "gulp-typescript": "^6.0.0-alpha.1",
+    "gulp-zip": "^5.0.1",
+    "rimraf": "^3.0.2",
+    "ts-loader": "^6.2.2",
+    "typescript": "^3.9.0-beta",
+    "vsce": "^1.74.0",
+    "vscode-nls-dev": "^3.3.1",
+    "webpack": "^4.42.1",
+    "webpack-stream": "^5.2.1"
+  },
+  "dependencies": {
+    "vscode-sqlite3": "^4.0.10"
+  },
+  "contributes": {
+    "commands": [
+      {
+        "command": "sqlite.createFile",
+        "title": "%sqlite.createFile%"
+      }
+    ],
+    "connectionProvider": {
+      "providerId": "sqlite",
+      "displayName": "Sqlite",
+      "connectionOptions": [
+        {
+          "specialValueType": "serverName",
+          "isIdentity": true,
+          "name": "file",
+          "displayName": "File",
+          "groupName": "Source",
+          "valueType": "string",
+          "defaultValue": null,
+          "objectType": null,
+          "categoryValues": null,
+          "isRequired": true,
+          "isArray": false
+        },
+        {
+          "specialValueType": "databaseName",
+          "isIdentity": true,
+          "name": "database",
+          "displayName": "not used",
+          "groupName": "Source",
+          "valueType": "string",
+          "defaultValue": null,
+          "objectType": null,
+          "categoryValues": null,
+          "isRequired": false,
+          "isArray": false
+        },
+        {
+          "specialValueType": "userName",
+          "isIdentity": true,
+          "name": "user",
+          "displayName": "not used",
+          "groupName": "Security",
+          "valueType": "string",
+          "defaultValue": null,
+          "objectType": null,
+          "categoryValues": null,
+          "isRequired": false,
+          "isArray": false
+        },
+        {
+          "specialValueType": "password",
+          "isIdentity": true,
+          "name": "password",
+          "displayName": "not used",
+          "groupName": "Security",
+          "valueType": "password",
+          "defaultValue": null,
+          "objectType": null,
+          "categoryValues": null,
+          "isRequired": false,
+          "isArray": false
+        },
+        {
+          "specialValueType": "connectionName",
+          "isIdentity": true,
+          "name": "connectionName",
+          "displayName": "not used",
+          "groupName": "Source",
+          "valueType": "string",
+          "defaultValue": null,
+          "objectType": null,
+          "categoryValues": null,
+          "isRequired": false,
+          "isArray": false
+        }
+      ]
+    }
+  }
+}

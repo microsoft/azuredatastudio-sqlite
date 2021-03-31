@@ -1,0 +1,15 @@
+src
+gulpfile.js
+.gitignore
+tsconfig.json
+webpack.config.js
+yarn.lock
+*.yarnrc
+.github
+artifacts
+node_modules
+!node_modules/vscode-sqlite3/build/Release/*.node
+!node_modules/vscode-sqlite3/package.json
+!node_modules/vscode-sqlite3/lib/sqlite3.js
+!node_modules/vscode-sqlite3/LICENSE
+out/*.map
