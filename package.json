@@ -1,9 +1,9 @@
 {
   "name": "azuredatastudio-sqlite",
   "displayName": "Sqlite",
-  "description": "%description%",
+  "description": "Provides a SQLite connection provider for use in Azure Data Studio tests",
   "publisher": "Microsoft",
-  "version": "1.0.20",
+  "version": "1.1.0",
   "main": "./out/index",
   "extensionKind": [
     "workspace"
