@@ -2,6 +2,8 @@
 
 This project provides a SQLite connection provider for use in Azure Data Studio tests.
 
+It is currently only for testing purposes - other usage is not supported at this time.
+
 ## Contributing
 
 This project welcomes contributions and suggestions.  Most contributions require you to agree to a
