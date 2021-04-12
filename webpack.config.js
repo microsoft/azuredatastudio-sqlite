@@ -12,7 +12,7 @@ const path = require('path');
 const CopyWebpackPlugin = require('copy-webpack-plugin');
 const { NLSBundlePlugin } = require('vscode-nls-dev/lib/webpack-bundler');
 
-const id = `anthonydresser.azuredatastudio-sqlite`;
+const id = `microsoft.azuredatastudio-sqlite`;
 
 /** @type WebpackConfig */
 module.exports = {
