@@ -3,7 +3,7 @@
   "displayName": "Sqlite",
   "description": "Provides a SQLite connection provider for use in Azure Data Studio tests",
   "publisher": "Microsoft",
-  "version": "1.1.1",
+  "version": "1.1.2",
   "main": "./out/index",
   "extensionKind": [
     "workspace"
