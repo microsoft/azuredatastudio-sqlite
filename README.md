@@ -4,6 +4,10 @@ This project provides a SQLite connection provider for use in Azure Data Studio 
 
 It is currently only for testing purposes - other usage is not supported at this time.
 
+## Creating a new Release
+
+To create a new release first update the version in [package.json](./package.json) and then create a new Release through Github targeting the main branch. The CD pipeline will automatically run and create the artifacts for that release. 
+
 ## Contributing
 
 This project welcomes contributions and suggestions.  Most contributions require you to agree to a
