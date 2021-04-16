@@ -30,7 +30,10 @@ export class QueryProvider implements azdata.QueryProvider {
 
 	async runQuery(ownerUri: string, selection: azdata.ISelectionData, runOptions?: azdata.ExecutionPlanOptions | undefined): Promise<void> {
 		if (this.connections.databases[ownerUri]) {
-			const content = (await vscode.workspace.openTextDocument(vscode.Uri.parse(ownerUri))).getText();
+			// Encode the URI before parsing in case it contains reserved characters such as %20 so that the parse doesn't
+			// parse them into their values accidently (such as if a path had %20 in the actual path name - that shouldn't be
+			// resolved to a space)
+			const content = (await vscode.workspace.openTextDocument(vscode.Uri.parse(encodeURI(ownerUri)))).getText();
 			this.connections.databases[ownerUri].all(content, (err, rows: { [column: string]: string | number | null }[]) => {
 				this.results[ownerUri] = rows;
 				const resultSet = { id: 0, complete: true, rowCount: rows.length, batchId: 0, columnInfo: Object.keys(rows[0]).map(v => ({ columnName: v })) };
