@@ -55,7 +55,7 @@ export class ConnectionProvider implements azdata.ConnectionProvider {
 	}
 
 	changeDatabase(connectionUri: string, newDatabase: string): Thenable<boolean> {
-		throw new Error('Method not implemented.');
+		return Promise.resolve(true);
 	}
 
 	rebuildIntelliSenseCache(connectionUri: string): Thenable<void> {
