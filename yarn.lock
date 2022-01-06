@@ -4434,10 +4434,10 @@ vscode-nls-dev@^3.3.1:
     xml2js "^0.4.19"
     yargs "^13.2.4"
 
-vscode-sqlite3@^4.0.10:
-  version "4.0.10"
-  resolved "https://registry.yarnpkg.com/vscode-sqlite3/-/vscode-sqlite3-4.0.10.tgz#cf34cd98e5a49b24d3bb5ff5f2058744931f7cee"
-  integrity sha512-oYH3Nff3AMfbZpDiOhUh+hVtxClwrXBt9SGHGed+RcKf1Z4/fkLpfaldZeWgn4YBHFjNJjJ8HHRRfVvB8fXj1w==
+vscode-sqlite3@^4.0.11:
+  version "4.0.11"
+  resolved "https://registry.yarnpkg.com/vscode-sqlite3/-/vscode-sqlite3-4.0.11.tgz#8f41ec8f4c03e24a284a74c5fad322ea39141f15"
+  integrity sha512-45oylZEr8sWJFWRoVE9iXI8RQhk7XDeIpwWYdtOAXFnCfmI74n0CwSqZOLfVsMLgtpU9/JZ1CA6s45tgKktSVQ==
   dependencies:
     nan "^2.14.0"
 

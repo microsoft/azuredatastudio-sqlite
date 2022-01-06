@@ -45,7 +45,7 @@
     "webpack-stream": "^5.2.1"
   },
   "dependencies": {
-    "vscode-sqlite3": "^4.0.10"
+    "vscode-sqlite3": "^4.0.11"
   },
   "contributes": {
     "commands": [
