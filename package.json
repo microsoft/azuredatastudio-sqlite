@@ -45,8 +45,10 @@
     "webpack-stream": "^5.2.1"
   },
   "dependencies": {
-    "nan": "^2.15.0",
     "vscode-sqlite3": "^4.0.11"
+  },
+  "resolutions": {
+    "nan": "^2.15.0"
   },
   "contributes": {
     "commands": [
