@@ -47,9 +47,6 @@
   "dependencies": {
     "vscode-sqlite3": "^4.0.11"
   },
-  "resolutions": {
-    "nan": "^2.15.0"
-  },
   "contributes": {
     "commands": [
       {
