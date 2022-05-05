@@ -8,94 +8,15 @@ on:
       - '*.*.*'
 
 jobs:
-  linux:
-    runs-on: ubuntu-latest
-    env:
-      CHILD_CONCURRENCY: "1"
-      GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-    steps:
-    - uses: actions/checkout@v1
-    - uses: actions/setup-node@v1
-      with:
-        node-version: 10
-    - name: Install Dependencies
-      run: yarn --frozen-lockfile
-    - name: Create Package
-      run: yarn package
-    - name: Create Release
-      if: startsWith(github.ref, 'refs/tags/')
-      uses: softprops/action-gh-release@v0.1.5
-      with:
-        files: ./artifacts/**
-    - name: Upload Artifacts
-      uses: actions/upload-artifact@v1
-      with:
-        name: artifacts
-        path: artifacts
-    - name: Setup Server Package
-      run: cp .server.yarnrc .yarnrc
-    - name: Clean
-      run: git clean -fxd
-    - name: Install Dependencies (Server)
-      run: yarn --frozen-lockfile
-    - name: Create Package (Server)
-      run: yarn package
-    - name: Create Release (Server)
-      if: startsWith(github.ref, 'refs/tags/')
-      uses: softprops/action-gh-release@v0.1.5
-      with:
-        files: ./artifacts/**
-    - name: Upload Artifacts (server)
-      uses: actions/upload-artifact@v1
-      with:
-        name: artifacts (server)
-        path: artifacts
-
-  windows:
-    runs-on: windows-latest
-    env:
-      CHILD_CONCURRENCY: "1"
-      GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-    steps:
-    - uses: actions/checkout@v1
-    - uses: actions/setup-node@v1
-      with:
-        node-version: 10
-    - name: Install Dependencies
-      run: yarn --frozen-lockfile
-    - name: Create Package
-      run: yarn package
-    - name: Create Release
-      if: startsWith(github.ref, 'refs/tags/')
-      uses: softprops/action-gh-release@v0.1.5
-      with:
-        files: ./artifacts/**
-    - name: Upload Artifacts
-      uses: actions/upload-artifact@v1
-      with:
-        name: artifacts
-        path: artifacts
-    - name: Setup Server Package
-      run: cp .server.yarnrc .yarnrc
-    - name: Clean
-      run: git clean -fxd
-    - name: Install Dependencies (Server)
-      run: yarn --frozen-lockfile
-    - name: Create Package (Server)
-      run: yarn package
-    - name: Create Release (Server)
-      if: startsWith(github.ref, 'refs/tags/')
-      uses: softprops/action-gh-release@v0.1.5
-      with:
-        files: ./artifacts/**
-    - name: Upload Artifacts (server)
-      uses: actions/upload-artifact@v1
-      with:
-        name: artifacts (server)
-        path: artifacts
-
-  darwin:
-    runs-on: macos-latest
+  buildAndRelease:
+    runs-on: ${{ matrix.os }}
+    strategy:
+      matrix:
+        os:
+          - macos-latest
+          - ubuntu-latest
+          - windows-2019
+    name: ${{ matrix.os }}
     env:
       CHILD_CONCURRENCY: "1"
       GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
