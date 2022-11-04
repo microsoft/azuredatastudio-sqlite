@@ -19,7 +19,15 @@ jobs:
     name: ${{ matrix.os }}
     steps:
       - uses: actions/checkout@v2
-      - run: |
-          yarn --frozen-lockfile
-          yarn compile
-        name: Compile
+      - name: Install Dependencies
+        run: yarn --frozen-lockfile
+      - name: Create Package
+        run: yarn package
+      - name: Setup Server Package
+        run: cp .server.yarnrc .yarnrc
+      - name: Clean
+        run: git clean -fxd
+      - name: Install Dependencies (Server)
+        run: yarn --frozen-lockfile
+      - name: Create Package (Server)
+        run: yarn package
