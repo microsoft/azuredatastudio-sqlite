@@ -3,7 +3,7 @@
   "displayName": "Sqlite",
   "description": "Provides a SQLite connection provider for use in Azure Data Studio tests",
   "publisher": "Microsoft",
-  "version": "1.19.0",
+  "version": "1.20.0",
   "main": "./out/index",
   "extensionKind": [
     "workspace"
@@ -45,7 +45,7 @@
     "webpack-stream": "^5.2.1"
   },
   "dependencies": {
-    "vscode-sqlite3": "^4.0.11"
+    "sqlite3": "^5.1.6-vscode"
   },
   "resolutions": {
     "nan": "^2.16.0"

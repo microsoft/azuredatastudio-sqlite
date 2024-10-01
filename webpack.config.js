@@ -51,7 +51,7 @@ module.exports = {
 	externals: {
 		'vscode': 'commonjs vscode', // ignored because it doesn't exist
 		'azdata': 'commonjs azdata',
-		'vscode-sqlite3': 'commonjs vscode-sqlite3'
+		'sqlite3': 'commonjs sqlite3'
 	},
 	output: {
 		// all output goes into `dist`.
